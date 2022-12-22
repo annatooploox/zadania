@@ -1,17 +1,15 @@
-import { style as style, globalStyle } from '@vanilla-extract/css'
+import { globalStyle, style } from '@vanilla-extract/css';
 
 globalStyle('body', {
-	margin: 0,
-	background: "hotpink"
-  });
-
+  margin: 0,
+  background: 'hotpink',
+});
 
 export const button = style({
-	width: 380,
-	height: 86,
-	display: "flex",
-	alignItems: "center",
-	justifyContent: "center",
-	backgroundColor: "yellow",
-	}
-);
+  width: 380,
+  height: 86,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundColor: 'yellow',
+});

@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { useState } from 'react';
+
 import { button } from './app.css';
 
-export default function IndexPage(){
-return <CounterButton />;
-};
-
+export default function IndexPage() {
+  return <CounterButton />;
+}
 
 function CounterButton() {
-    const[counter,setCounter ] = useState(1);
-    const increment = () => setCounter(counter + 1)
-    return <button className={button} onClick={increment}>{counter}</button>;
-  };
+  const [counter, setCounter] = useState(1);
+  const increment = () => setCounter(counter + 1);
+  return (
+    <button className={button} onClick={increment}>
+      {counter}
+    </button>
+  );
+}
 
 /**
  * 1. Używanie pełnych nazw: Inc -> Incrementing, nr -> number
@@ -28,13 +32,15 @@ function CounterButton() {
  *      });
  * 1.e. for (let i = 0; i < items.length; i++)
  * 1.f. for (let index = 0; index < items.length; ++index)   // my recommendation
- * 
+ *
  * 2. Unikanie nazw odpowiadających słowom kluczowym lub typom:
  * 2.a. Czyli nie: default, Map, Set, number, string, class, function
  * 2.b. Używamy nazw, które zawierają w sobie sens (istnienia) danej wartości
  *      number -> counter, clickCount
- * 
+ *
  * 3. React setState: konwencja jest
  * - const [x, setX] = useState(...);
  * - const [counter, setCounter] = useState(...);
  */
+
+// npm add -D eslint-config-fatfisz eslint-config-prettier eslint-plugin-import eslint-plugin-prettier prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript eslint-plugin-react eslint-plugin-react-hooks
