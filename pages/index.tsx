@@ -1,19 +1,34 @@
-import { useState } from 'react';
-
-import { button } from './app.css';
+import { button_variant } from './app.css';
 
 export default function IndexPage() {
-  return <CounterButton />;
+  return (
+    <>
+      <ColorButton buttonColor="yellow" backgroundColor="blue" />
+      <ColorButton buttonColor="grey" backgroundColor="black" />
+      <ColorButton buttonColor="pink" backgroundColor="green" />
+    </>
+  );
 }
 
-function CounterButton() {
-  const [counter, setCounter] = useState(1);
-  const increment = () => setCounter(counter + 1);
+function ColorButton({
+  backgroundColor,
+  buttonColor,
+}: {
+  backgroundColor: string;
+  buttonColor: keyof typeof button_variant;
+}) {
   return (
-    <button className={button} onClick={increment}>
-      {counter}
+    <button
+      className={button_variant[buttonColor]}
+      onClick={() => changeBackgroundColor(backgroundColor)}
+    >
+      Turn on {backgroundColor}
     </button>
   );
+}
+
+function changeBackgroundColor(color: string) {
+  document.body.style.backgroundColor = color;
 }
 
 /**
