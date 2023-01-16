@@ -12,13 +12,13 @@ const backgroundColorHover = createVar();
 export const columns = style({
   display: 'flex',
   flexDirection: 'column',
-  padding: 0,
+  padding: 10,
 });
 
 export const rows = style({
   display: 'flex',
   flexDirection: 'row',
-  padding: 50,
+  padding: 10,
 });
 
 const var_button = style({
