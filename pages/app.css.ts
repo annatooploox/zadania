@@ -9,6 +9,18 @@ globalStyle('body', {
 const backgroundColor = createVar();
 const backgroundColorHover = createVar();
 
+export const columns = style({
+  display: 'flex',
+  flexDirection: 'column',
+  padding: 0,
+});
+
+export const rows = style({
+  display: 'flex',
+  flexDirection: 'row',
+  padding: 50,
+});
+
 const var_button = style({
   width: 380,
   height: 86,

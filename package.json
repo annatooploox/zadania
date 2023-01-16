@@ -13,9 +13,13 @@
   "license": "ISC",
   "dependencies": {
     "@vanilla-extract/css": "^1.9.2",
+    "bootstrap": "^5.2.3",
+    "color": "^4.2.3",
     "next": "^13.0.7",
+    "package": "^1.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "reactstrap": "^9.1.5"
   },
   "devDependencies": {
     "@types/react": "18.0.26",
