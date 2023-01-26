@@ -1,36 +1,25 @@
-import { Col, Row } from 'reactstrap';
+import { ComponentProps, ReactNode } from 'react';
 
-import { button_variant, columns, rows } from './app.css';
+import { button_variant, columns, rows, Space, space_variant } from './app.css';
 
 export default function IndexPage() {
   return (
-    <>
-      <Row className={rows}>
-        <Col className={columns}>
-          <ColorButton buttonColor="yellow" backgroundColor="blue" />
-        </Col>
-        <Col className={columns}>
-          <ColorButton buttonColor="yellow" backgroundColor="blue" />
-        </Col>
+    <Column space={20}>
+      <Row space={8}>
+        <ColorButton buttonColor="yellow" backgroundColor="blue" />
+        <ColorButton buttonColor="grey" backgroundColor="black" />
       </Row>
-      <Row className={rows}>
-        <Col className={columns}>
-          <ColorButton buttonColor="grey" backgroundColor="black" />
-        </Col>
-        <Col className={columns}>
-          <ColorButton buttonColor="grey" backgroundColor="black" />
-        </Col>
-      </Row>
-      <Row className={rows}>
-        <Col className={columns}>
-          <ColorButton buttonColor="pink" backgroundColor="green" />
-        </Col>
-        <Col className={columns}>
-          <ColorButton buttonColor="pink" backgroundColor="green" />
-        </Col>
-      </Row>
-    </>
+      <ColorButton buttonColor="pink" backgroundColor="green" />
+    </Column>
   );
+}
+
+function Column({ space = 0, children }: { space?: Space; children: ReactNode }) {
+  return <div className={`${space_variant[space]} ${columns}`}>{children}</div>;
+}
+
+function Row({ space = 0, children }: { space?: Space; children: ReactNode }) {
+  return <div className={`${space_variant[space]} ${rows}`}>{children}</div>;
 }
 
 function ColorButton({
